@@ -24,12 +24,11 @@ function FAQs(props: { ref?: React.Ref<unknown> }) {
             onMouseEnter={() => setOpen1(true)}
             onMouseLeave={() => setOpen1(false)}>
             <AccordionSummary>
-              <b>Q: How do I participate in a quiz or poll?</b>
+              <b>Q: How does Journey differentiate from other diary applications?</b>
             </AccordionSummary>
             <AccordionDetails>
-              <b>A:</b> Simply log in to the PulseCheck platform on your device
-              and join the session using the provided quiz or poll link from
-              your instructor.
+              <b>A:</b> Journey allows for a more comfortable and informal record database
+               for patient use or general use to any user signed up.
             </AccordionDetails>
           </Accordion>
         </RA.Bounce>
@@ -39,11 +38,11 @@ function FAQs(props: { ref?: React.Ref<unknown> }) {
             onMouseEnter={() => setOpen2(true)}
             onMouseLeave={() => setOpen2(false)}>
             <AccordionSummary>
-              <b>Q: Can I access my quiz results?</b>
+              <b>Q: How does Journeys AI model work for users?</b>
             </AccordionSummary>
             <AccordionDetails>
-              <b>A:</b> Yes! After completing a quiz, you can view your results
-              and see which questions you answered correctly or incorrectly.
+              <b>A:</b> Through AI’s tool usage of sentiment analysis using natural processing 
+              languages, the app will record emotional patterns that the user records in their journal entries. 
             </AccordionDetails>
           </Accordion>
         </RA.Bounce>
@@ -53,28 +52,28 @@ function FAQs(props: { ref?: React.Ref<unknown> }) {
             onMouseEnter={() => setOpen3(true)}
             onMouseLeave={() => setOpen3(false)}>
             <AccordionSummary>
-              <b>Q: How does PulseCheck track attendance?</b>
+              <b>Q: Do you have to pay to journal? </b>
             </AccordionSummary>
             <AccordionDetails>
-              <b>A:</b> PulseCheck tracks attendance based on your participation
-              in live polls and quizzes during lectures.
+              <b>A:</b> Journaling on the app is completely free for users who want to record their entries and be provided an outlet to write how they are feeling for the day. For further multipurposes,
+              fees may apply for less limitations on certain features.
             </AccordionDetails>
           </Accordion>
         </RA.Bounce>
-        <RA.Bounce triggerOnce>
+        {/* <RA.Bounce triggerOnce>
           <Accordion
             expanded={open4}
             onMouseEnter={() => setOpen4(true)}
             onMouseLeave={() => setOpen4(false)}>
-            <AccordionSummary>
-              <b>Q: Can I use PulseCheck on my phone?</b>
+            <AccordionSummary> 
+               <b>Q: Can I use PulseCheck on my phone?</b>
             </AccordionSummary>
             <AccordionDetails>
               <b>A:</b> Absolutely! PulseCheck is fully responsive and works
-              seamlessly mobile devices.
-            </AccordionDetails>
+              seamlessly mobile devices. 
+            </AccordionDetails> 
           </Accordion>
-        </RA.Bounce>
+        </RA.Bounce> */}
       </Stack>
     </Box>
   )
