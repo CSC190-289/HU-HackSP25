@@ -16,7 +16,8 @@ function Features(props: { ref?: React.Ref<unknown> }) {
             <RA.Bounce triggerOnce>
               <Typography fontWeight={700}>Logged Journal Entry:</Typography>
               <Typography>
-              Save all your logged entries, with easy access to previously written works!
+                Save all your logged entries, with easy access to previously
+                written works!
               </Typography>
             </RA.Bounce>
           </CardContent>
@@ -26,11 +27,13 @@ function Features(props: { ref?: React.Ref<unknown> }) {
             <RA.Bounce triggerOnce>
               <Typography fontWeight={700}>AI Analysis:</Typography>
               <Typography>
-              Have your moods recorded through journal entires and analyzed with a AI's Natural Process Language's model to easily get insight with your emotions. 
+                Have your moods recorded through journal entires and analyzed
+                with a AI's Natural Process Language's model to easily get
+                insight with your emotions.
               </Typography>
             </RA.Bounce>
           </CardContent>
-        {/* </Card>
+          {/* </Card>
         <Card>
           <CardContent>
             <RA.Bounce triggerOnce>
