@@ -1,5 +1,6 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material"
 import { useNavigate, useLocation } from "react-router-dom"
+import Home from "../components/splash/Home"
 import About from "../components/splash/About"
 import FAQs from "../components/splash/FAQs"
 import Features from "../components/splash/Features"
@@ -50,18 +51,7 @@ export default function Splash() {
     <Container maxWidth='sm'>
       <Box mb={16}>
         <RA.Bounce triggerOnce>
-          <Typography variant='h4' fontWeight={700} margin={4} gutterBottom>
-            Turning Dead Life into Real-Time Experiences!
-          </Typography>
-        </RA.Bounce>
-        <RA.Bounce triggerOnce>
-          <Button
-            variant='contained'
-            color='primary'
-            sx={{ mb: 2 }}
-            onClick={handleClick}>
-            Get Started
-          </Button>
+          <Home></Home>
         </RA.Bounce>
         <Stack spacing={4} mb={32}>
           <RA.Bounce triggerOnce>

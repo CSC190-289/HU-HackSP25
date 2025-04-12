@@ -1,9 +1,8 @@
+import Home from "@/components/splash/Home"
 import { Container, Typography } from "@mui/material"
 
 export default function Debug() {
   return (
-    <Container>
-      <Typography>Debug Here</Typography>
-    </Container>
+    <Home></Home>
   )
 }
