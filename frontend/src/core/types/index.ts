@@ -22,3 +22,10 @@ export interface Feel {
   name: FeelType
   amount: number
 }
+
+export interface EntryNote {
+  date: Timestamp
+  picture: string
+  text: string
+  feelings: Feel[]
+}

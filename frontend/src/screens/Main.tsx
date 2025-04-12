@@ -2,7 +2,7 @@ import { useAuthContext } from "@/core/hooks"
 import { LinearProgress } from "@mui/material"
 import React from "react"
 import Splash from "./Splash"
-import Dashboard from "./Dashboard"
+import JournalEditor from "./JournalEditor"
 
 /**
  * @brief Displays the main screen and conditionally renders based on
@@ -16,6 +16,8 @@ export default function Main() {
   }
 
   return (
-    <React.Fragment>{auth.user ? <Dashboard /> : <Splash />}</React.Fragment>
+    <React.Fragment>
+      {auth.user ? <JournalEditor /> : <Splash />}
+    </React.Fragment>
   )
 }

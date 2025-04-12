@@ -1,6 +1,8 @@
-import Dashboard from "./Dashboard"
+import JournalEditor from "./JournalEditor"
 import Debug from "./Debug"
 import GetStarted from "./GetStarted"
+import JourneyDetails from "./JourneyDetails"
+import JourneyLog from "./JourneyLog"
 import Login from "./Login"
 import Main from "./Main"
 import NotFound from "./NotFound"
@@ -12,7 +14,7 @@ import TermsOfService from "./TermsOfService"
 
 export const Screen = {
   Splash,
-  Dashboard,
+  Dashboard: JournalEditor,
   Main,
   Debug,
   Login,
@@ -22,4 +24,6 @@ export const Screen = {
   TermsOfService,
   Profile,
   NotFound,
+  JourneyLog,
+  JourneyDetails,
 }

@@ -4,12 +4,12 @@ import Image from "mui-image"
 import React, { Dispatch, SetStateAction, useRef } from "react"
 
 interface Props {
-  img: string
-  setImg: Dispatch<SetStateAction<string>>
+  buffer: string | ArrayBuffer
+  setBuffer: Dispatch<SetStateAction<string | ArrayBuffer>>
 }
 
 export default function UploadImage(props: Props) {
-  const { img, setImg } = props
+  const { buffer: img, setBuffer: setImg } = props
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleClick = () => {
@@ -24,7 +24,7 @@ export default function UploadImage(props: Props) {
       const reader = new FileReader()
       reader.onloadend = () => {
         if (reader.result) {
-          setImg(reader.result as string) // Update state with the file's base64 string
+          setImg(reader.result as ArrayBuffer) // Update state with the file's base64 string
         }
       }
       reader.readAsDataURL(file)
@@ -32,7 +32,7 @@ export default function UploadImage(props: Props) {
   }
 
   return img ? (
-    <Image src={img} alt='your image' fit='contain' height={256} />
+    <Image src={img as string} alt='your image' fit='contain' height={256} />
   ) : (
     <Box
       sx={{
