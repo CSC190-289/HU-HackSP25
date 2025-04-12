@@ -14,9 +14,11 @@
 	"dependencies": {
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.0",
+		"@genkit-ai/googleai": "^1.6.0",
 		"@mui/icons-material": "^6.4.4",
 		"@mui/material": "^6.4.4",
 		"firebase": "^11.3.1",
+		"genkit": "^1.6.0",
 		"mui-image": "^1.0.7",
 		"react": "^19.0.0",
 		"react-awesome-reveal": "^4.3.1",

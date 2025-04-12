@@ -7,7 +7,7 @@ import FooterLink from "../components/splash/FooterLink"
 import { useRef, useEffect } from "react"
 import { RA } from "@/styles"
 import { ExpandCircleDown } from "@mui/icons-material"
-
+import LogCard from "@/components/log/logCard"
 
 interface LocationState {
   scrollTo?: string
@@ -49,13 +49,13 @@ export default function Splash() {
 
   return (
     <Container maxWidth='sm'>
-      
       <Box mb={16}>
         <RA.Bounce triggerOnce>
           <Typography variant='h4' fontWeight={700} margin={4} gutterBottom>
             Turning Dead Life into Real-Time Experiences!
           </Typography>
         </RA.Bounce>
+        <LogCard/>
         <RA.Bounce triggerOnce>
           <Button
             variant='contained'

@@ -9,6 +9,7 @@ import {
 import React from "react"
 import { RA } from "@/styles"
 
+
 export default function PrivacyPolicy(props: { ref?: React.Ref<unknown> }) {
   return (
     <Container maxWidth='sm'>

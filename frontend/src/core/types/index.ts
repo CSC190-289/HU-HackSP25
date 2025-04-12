@@ -19,6 +19,16 @@ export interface User {
 /**
  * Represents a poll created by a user.
  */
+export interface Log {
+  owner: DocumentReference<User>
+  entry: string
+  async: boolean
+  anonymous: boolean | null
+  time: number | null
+  questions: DocumentReference<Question>[]
+  recorded_at: Timestamp
+  updated_at: Timestamp
+}
 export interface Poll {
   owner: DocumentReference<User>
   title: string

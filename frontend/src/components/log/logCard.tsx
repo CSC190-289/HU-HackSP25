@@ -1,14 +1,18 @@
+import { Log } from "@/core/types";
 import { BorderColor } from "@mui/icons-material";
 import { Card, CardContent, Typography } from "@mui/material";
+import { useState } from "react";
 
-export default function logInfo() {
+const today = new Date();
+
+export default function LogCard() {
     return ( 
-        <Card>
+        <Card variant="outlined"  sx={{ borderRadius: 1 }}>
             <CardContent>
                 <Typography>
-                    please send help 
+                  TODAY: {today.toLocaleString()}
                 </Typography>
             </CardContent>
         </Card>
     )
-}``
+}
