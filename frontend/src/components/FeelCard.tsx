@@ -1,9 +1,9 @@
-import { Card, CardContent, CardHeader, Typography } from "@mui/material"
-import React from "react"
+import { RA } from "@/styles"
+import { Card, CardContent, Typography } from "@mui/material"
 
-function decimalToTenScale(decimal: number): number {
-  return +(decimal * 10).toFixed(1) // one decimal place
-}
+// function decimalToTenScale(decimal: number): number {
+//   return +(decimal * 10).toFixed(1) // one decimal place
+// }
 
 interface Props {
   feeling: string
@@ -12,12 +12,18 @@ interface Props {
 
 export default function FeelCard(props: Props) {
   return (
-    <Card
-      sx={{ alignItems: "center", backgroundColor: "#7E4274", color: "#FFF" }}>
-      <CardContent>
-        <Typography variant='h6'>{props.feeling}</Typography>
-        <Typography>{decimalToTenScale(props.amount)} / 10</Typography>
-      </CardContent>
-    </Card>
+    <RA.Zoom>
+      <Card
+        sx={{
+          alignItems: "center",
+          backgroundColor: "#7E4274",
+          color: "#FFF",
+        }}>
+        <CardContent>
+          <Typography variant='h6'>{props.feeling}</Typography>
+          <Typography variant='h5'>{props.amount} %</Typography>
+        </CardContent>
+      </Card>
+    </RA.Zoom>
   )
 }

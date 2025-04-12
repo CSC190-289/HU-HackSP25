@@ -16,8 +16,9 @@ import UploadImage from "./UploadImage"
 import Protip from "../today/Protip"
 // import FeelCard from "../FeelCard"
 import { firestore } from "@/core/api/firebase"
-import { useAuthContext } from "@/core/hooks"
+import { useAuthContext, useSnackbar } from "@/core/hooks"
 import { useNavigate } from "react-router-dom"
+import { Feel } from "@/core/types"
 
 function formatTimestampToMonthDay(timestamp: Timestamp): string {
   const date = timestamp.toDate()
@@ -66,6 +67,7 @@ export default function FeelingForm() {
   const [text, setText] = useState("")
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+  const snack = useSnackbar()
 
   useEffect(() => {
     setEmo(getRandomFeelingEmoji())
@@ -83,18 +85,64 @@ export default function FeelingForm() {
           throw new Error("Unauthroized")
         }
         const cref = collection(firestore, "users", auth.user.uid, "feelings")
+        const res = await fetch("http://209.97.147.167:8000/journey/", {
+          method: "POST",
+          body: JSON.stringify({
+            raw_string: text,
+          }),
+        })
+        if (!res.ok) {
+          throw new Error()
+        }
+        const payload = (await res.json()) as unknown as string[]
+        console.debug("payload", payload)
+        const feels: Feel[] = [
+          {
+            name: "Sadness",
+            amount: parseFloat(payload[0]),
+          },
+          {
+            name: "Joy",
+            amount: parseFloat(payload[1]),
+          },
+          {
+            name: "Love",
+            amount: parseFloat(payload[2]),
+          },
+          {
+            name: "Anger",
+            amount: parseFloat(payload[3]),
+          },
+          {
+            name: "Fear",
+            amount: parseFloat(payload[4]),
+          },
+          {
+            name: "Surprise",
+            amount: parseFloat(payload[5]),
+          },
+        ]
+        console.debug("feels", feels)
         await addDoc(cref, {
           // Updates prompt_img field in question doc
           date: ts,
           text: text,
           picture: picture,
           /* TODO - talk to AI model */
-          feelings: [],
+          feelings: feels,
         })
         // await getDoc(fref)
         void navigate("/")
       } catch (error) {
         console.debug("An error has occurred: ", error)
+        snack.show({
+          position: {
+            horizontal: "center",
+            vertical: "top",
+          },
+          message: "An error has occured. Try again later.",
+          type: "error",
+        })
       }
       setLoading(false)
     }
