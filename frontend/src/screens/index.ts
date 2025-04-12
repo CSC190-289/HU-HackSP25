@@ -24,6 +24,7 @@ export const Screen = {
   TermsOfService,
   Profile,
   NotFound,
+  JournalEditor,
   JourneyLog,
   JourneyDetails,
 }

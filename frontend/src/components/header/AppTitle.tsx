@@ -12,7 +12,7 @@ export default function AppTitle() {
       display={"flex"}
       alignItems={"center"}
       component={Link}
-      to={user && !user.isAnonymous ? "/dashboard" : "/"}
+      to={user && !user.isAnonymous ? "/" : "/"}
       sx={{
         display: "flex",
         alignItems: "center",

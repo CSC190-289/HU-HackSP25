@@ -16,7 +16,7 @@ const firebaseConfig: FirebaseOptions = {
   measurementId: "G-3FJ63WSNVC",
 }
 
-const BUCKET_URL = "gs://pulsecheck-7cf2b.firebasestorage.app"
+const BUCKET_URL = "gs://gettingstated-ecede.firebasestorage.app"
 
 const app = initializeApp(firebaseConfig)
 
@@ -66,18 +66,6 @@ class APIStore {
 
   public get users(): UserStore {
     return this._users
-  }
-
-  public get polls(): PollStore {
-    return this._polls
-  }
-
-  public get sessions(): SessionStore {
-    return this._sessions
-  }
-
-  public get submissions(): SubmissionStore {
-    return this._submissions
   }
 }
 

@@ -1,15 +1,19 @@
+import { storage } from "@/core/api/firebase"
+import { useAuthContext } from "@/core/hooks"
 import { Upload } from "@mui/icons-material"
 import { Box, Typography } from "@mui/material"
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage"
 import Image from "mui-image"
 import React, { Dispatch, SetStateAction, useRef } from "react"
 
 interface Props {
-  buffer: string | ArrayBuffer
-  setBuffer: Dispatch<SetStateAction<string | ArrayBuffer>>
+  picture: string
+  setPicture: Dispatch<SetStateAction<string>>
 }
 
 export default function UploadImage(props: Props) {
-  const { buffer: img, setBuffer: setImg } = props
+  const auth = useAuthContext()
+  const { picture, setPicture } = props
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleClick = () => {
@@ -18,21 +22,36 @@ export default function UploadImage(props: Props) {
     }
   }
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (file) {
-      const reader = new FileReader()
-      reader.onloadend = () => {
-        if (reader.result) {
-          setImg(reader.result as ArrayBuffer) // Update state with the file's base64 string
-        }
+  const fileUpload = async (payload: File, storagePath: string) => {
+    const fileRef = ref(storage, storagePath)
+    try {
+      if (!auth.user) {
+        throw new Error("Unauthroized")
       }
-      reader.readAsDataURL(file)
+      const snapshot = await uploadBytes(fileRef, payload) // Uploads image
+      const downloadURL = await getDownloadURL(snapshot.ref) // Gets download URL from firestore
+      setPicture(downloadURL)
+    } catch (error) {
+      console.debug("An error has occurred: ", error)
     }
   }
 
-  return img ? (
-    <Image src={img as string} alt='your image' fit='contain' height={256} />
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const chosen = e.target.files?.[0]
+    if (chosen) {
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        if (reader.result) {
+          void fileUpload(chosen, `feelings/${chosen.name}`)
+          // setPicture({ name: chosen.name, buffer: reader.result }) // Update state with the file's base64 string
+        }
+      }
+      reader.readAsDataURL(chosen)
+    }
+  }
+
+  return picture ? (
+    <Image src={picture} alt='your image' fit='contain' height={256} />
   ) : (
     <Box
       sx={{

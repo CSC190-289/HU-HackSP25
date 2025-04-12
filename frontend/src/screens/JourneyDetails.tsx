@@ -1,12 +1,24 @@
+import FeelGrid from "@/components/FeelGrid"
 import { firestore } from "@/core/api/firebase"
 import { useAuthContext } from "@/core/hooks"
 import { EntryNote } from "@/core/types"
-import { AppBar, Box, LinearProgress, Toolbar, Typography } from "@mui/material"
+import {
+  AppBar,
+  Box,
+  Container,
+  LinearProgress,
+  Toolbar,
+  Typography,
+} from "@mui/material"
 import { doc, DocumentSnapshot, getDoc, Timestamp } from "firebase/firestore"
+import Image from "mui-image"
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
-function formatTimestampToMonthDay(timestamp: Timestamp): string {
+function formatTimestampToMonthDay(timestamp: Timestamp | undefined): string {
+  if (!timestamp) {
+    return ""
+  }
   const date = timestamp.toDate()
   return date.toLocaleDateString("en-US", {
     month: "short", // "Apr"
@@ -14,7 +26,10 @@ function formatTimestampToMonthDay(timestamp: Timestamp): string {
   })
 }
 
-function formatTimestampToTime(timestamp: Timestamp): string {
+function formatTimestampToTime(timestamp: Timestamp | undefined): string {
+  if (!timestamp) {
+    return ""
+  }
   const date = timestamp.toDate()
   return date.toLocaleTimeString("en-US", {
     hour: "numeric",
@@ -27,33 +42,54 @@ export default function JourneyDetails() {
   const auth = useAuthContext()
   const id = params.id ?? ""
   const [entry, setEntry] = useState<DocumentSnapshot<EntryNote> | null>(null)
+  const navigate = useNavigate()
+
+  if (!id) {
+    void navigate("/")
+  }
 
   useEffect(() => {
-    if (auth.user && id) {
+    if (auth.user) {
       const ref = doc(firestore, "users", auth.user.uid, "feelings", id)
       getDoc(ref)
         .then((x) => {
           setEntry(x as DocumentSnapshot<EntryNote>)
         })
-        .catch((err) => console.debug(err))
+        .catch(() => void navigate("/"))
     }
-  }, [auth.user, id])
+  }, [auth.user, id, navigate])
+
+  console.debug(entry?.data())
 
   return (
     <React.Fragment>
       <AppBar position='relative' color='inherit'>
         <Toolbar>
-          <Box>
-            <Typography>Journey</Typography>
+          <Box flex={1}>
+            <Typography fontWeight={"bolds"}>Your Journey Today</Typography>
             <Box display={"flex"}>
               <Typography>
                 {formatTimestampToMonthDay(entry?.data()?.date)}
+              </Typography>
+              <Box flexGrow={1} />
+              <Typography>
+                {formatTimestampToTime(entry?.data()?.date)}
               </Typography>
             </Box>
           </Box>
         </Toolbar>
       </AppBar>
-      {entry ? <></> : <LinearProgress />}
+      {entry?.exists() ? (
+        <Container sx={{ mt: 2 }}>
+          {entry.data().picture && (
+            <Image src={entry.data().picture} height={256} fit='contain' />
+          )}
+          <Typography textAlign={"initial"}>{entry.data().text}</Typography>
+          <FeelGrid feels={entry.data().feelings} />
+        </Container>
+      ) : (
+        <LinearProgress />
+      )}
     </React.Fragment>
   )
 }
