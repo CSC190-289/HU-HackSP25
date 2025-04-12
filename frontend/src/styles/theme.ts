@@ -1,4 +1,5 @@
 import { createTheme, PaletteMode, ThemeOptions } from "@mui/material"
+import IndieFlower from "/fonts/IndieFlower-Regular.ttf"
 
 const opts = (mode: PaletteMode): ThemeOptions => ({
   palette: {
@@ -11,7 +12,8 @@ const opts = (mode: PaletteMode): ThemeOptions => ({
     },
   },
   typography: {
-    // fontFamily: "monospace",
+    fontFamily: 'IndieFlower',
+    fontSize: 16,
   },
   components: {
     MuiButton: {
