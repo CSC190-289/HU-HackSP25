@@ -5,42 +5,38 @@ import React from "react"
 function Features(props: { ref?: React.Ref<unknown> }) {
   return (
     <Box textAlign={"center"} ref={props.ref}>
-      <RA.Bounce triggerOnce>
+      <RA.Zoom triggerOnce>
         <Typography variant='h5' fontWeight={700} mb={2}>
           Features
         </Typography>
-      </RA.Bounce>
+      </RA.Zoom>
       <Stack spacing={4}>
         <Card>
           <CardContent>
-            <RA.Bounce triggerOnce>
-              <Typography fontWeight={700}>Real-Time Questioning:</Typography>
+            <RA.Zoom triggerOnce>
+              <Typography fontWeight={700}>Logged Journal Entry:</Typography>
               <Typography>
-                Hosts are able to create and display multiple-choice <br></br>{" "}
-                question quizes and polls for participating users to respond to
-                simultaniously and in real-time.
+                Save all your logged entries, with easy access to previously
+                written works!
               </Typography>
-            </RA.Bounce>
+            </RA.Zoom>
           </CardContent>
         </Card>
         <Card>
           <CardContent>
-            <RA.Bounce triggerOnce>
-              <Typography fontWeight={700}>Automatic Scoring:</Typography>
+            <RA.Zoom triggerOnce>
+              <Typography fontWeight={700}>AI Analysis:</Typography>
               <Typography>
-                PulseCheck automatically calculates a participant's quiz scores
-                in <br></br>
-                real-time giving them feedback on their performance following
-                each question with a complete overview on their preformance{" "}
-                <br></br>
-                after the session concludes.
+                Have your moods recorded through journal entires and analyzed
+                with a AI's Natural Process Language's model to easily get
+                insight with your emotions.
               </Typography>
-            </RA.Bounce>
+            </RA.Zoom>
           </CardContent>
-        </Card>
+          {/* </Card>
         <Card>
           <CardContent>
-            <RA.Bounce triggerOnce>
+            <RA.Zoom triggerOnce>
               <Typography fontWeight={700}>Host Dashboard:</Typography>
               <Typography>
                 During polling Hosts have access to a dashboard which allows
@@ -49,12 +45,12 @@ function Features(props: { ref?: React.Ref<unknown> }) {
                 <br></br>
                 insight on participants understanding of the material.
               </Typography>
-            </RA.Bounce>
+            </RA.Zoom>
           </CardContent>
         </Card>
-        <Card>
-          <CardContent>
-            <RA.Bounce triggerOnce>
+        <Card> */}
+          {/* <CardContent>
+            <RA.Zoom triggerOnce>
               <Typography fontWeight={700}>Web Access & UI:</Typography>
               <Typography>
                 PulseCheck is a web application that works on Desktop, Tablets,
@@ -62,24 +58,24 @@ function Features(props: { ref?: React.Ref<unknown> }) {
                 Firebase, React, and Material UI in order to ensure both a fast
                 and optimal user experience.
               </Typography>
-            </RA.Bounce>
+            </RA.Zoom>
           </CardContent>
         </Card>
         <Card>
           <CardContent>
-            <RA.Bounce triggerOnce>
+            <RA.Zoom triggerOnce>
               <Typography fontWeight={700}>Attendance Tracking:</Typography>
               <Typography>
                 User participation can serve as a check for who is in
                 attendance. Non-participating users are flagged for review and
                 can be removed from a poll at the Hosts discretion.
               </Typography>
-            </RA.Bounce>
+            </RA.Zoom>
           </CardContent>
         </Card>
         <Card>
           <CardContent>
-            <RA.Bounce triggerOnce>
+            <RA.Zoom triggerOnce>
               <Typography fontWeight={700}>
                 Question Banking & Randomization:
               </Typography>
@@ -90,8 +86,8 @@ function Features(props: { ref?: React.Ref<unknown> }) {
                 randomized to prevent the sharing of answers between
                 participants should the host choose.
               </Typography>
-            </RA.Bounce>
-          </CardContent>
+            </RA.Zoom>
+          </CardContent> */}
         </Card>
       </Stack>
     </Box>

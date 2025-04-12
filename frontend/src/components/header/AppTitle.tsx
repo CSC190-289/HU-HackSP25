@@ -12,7 +12,7 @@ export default function AppTitle() {
       display={"flex"}
       alignItems={"center"}
       component={Link}
-      to={user && !user.isAnonymous ? "/dashboard" : "/"}
+      to={user && !user.isAnonymous ? "/" : "/"}
       sx={{
         display: "flex",
         alignItems: "center",
@@ -23,9 +23,9 @@ export default function AppTitle() {
         },
       }}>
       <Typography pt={0.5} variant='h6'>
-        Journey
+        Journey 
       </Typography>
-      <Image src='/favicon.png' width={SZ} height={SZ} />
+      <Image src='/favicon.png' width={SZ} height={SZ}/>
     </Box>
   )
 }

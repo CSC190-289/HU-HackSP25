@@ -2,10 +2,13 @@ import { MenuList } from "@mui/material"
 import MenuItem from "./MenuItem"
 import {
   AccountCircle,
-  BarChart,
-  Dashboard,
+  // BarChart,
+  Book,
+  // CalendarViewMonth,
+  // Dashboard,
+  EditNote,
   ExitToApp,
-  HowToVote,
+  // HowToVote,
 } from "@mui/icons-material"
 import api from "@/core/api/firebase"
 import { useNavigate } from "react-router-dom"
@@ -24,8 +27,7 @@ export default function AuthMenuList(props: AuthMenuListProps) {
     api.auth
       .logout()
       .then(() => {
-        console.debug("logged out user!")
-        void navigate("/get-started")
+        void navigate("/")
         handleClose()
       })
       .catch((err) => console.debug(err))
@@ -46,15 +48,18 @@ export default function AuthMenuList(props: AuthMenuListProps) {
 
   return (
     <MenuList>
-      <MenuItem icon={Dashboard} to='/dashboard' onClick={handleClose}>
-        Dashboard
+      <MenuItem icon={Book} to='/' onClick={handleClose}>
+        Journey Log
       </MenuItem>
-      <MenuItem icon={HowToVote} to='/poll/join' onClick={handleClose}>
-        Join Poll
+      <MenuItem icon={EditNote} to='/entry/create/' onClick={handleClose}>
+        Create Entry
       </MenuItem>
-      <MenuItem icon={BarChart} to='/poll/history' onClick={handleClose}>
-        Results
-      </MenuItem>
+      {/* <MenuItem
+        icon={CalendarViewMonth}
+        to='/journey/today'
+        onClick={handleClose}>
+        Journey Today
+      </MenuItem> */}
       <MenuItem icon={AccountCircle} to={"/profile"} onClick={handleClose}>
         Profile
       </MenuItem>

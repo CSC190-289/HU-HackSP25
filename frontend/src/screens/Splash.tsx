@@ -1,5 +1,6 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material"
 import { useNavigate, useLocation } from "react-router-dom"
+import Home from "../components/splash/Header"
 import About from "../components/splash/About"
 import FAQs from "../components/splash/FAQs"
 import Features from "../components/splash/Features"
@@ -49,27 +50,15 @@ export default function Splash() {
   return (
     <Container maxWidth='sm'>
       <Box mb={16}>
-        <RA.Bounce triggerOnce>
-          <Typography variant='h4' fontWeight={700} margin={4} gutterBottom>
-            Turning Dead Life into Real-Time Experiences!
-          </Typography>
-        </RA.Bounce>
-        <RA.Bounce triggerOnce>
-          <Button
-            variant='contained'
-            color='primary'
-            sx={{ mb: 2 }}
-            onClick={handleClick}>
-            Get Started
-          </Button>
-        </RA.Bounce>
+        <RA.Zoom triggerOnce>
+          <Home></Home>
+        </RA.Zoom>
         <Stack spacing={4} mb={32}>
-          <RA.Bounce triggerOnce>
+          <RA.Zoom triggerOnce>
             <Typography variant='body1' marginInline={4} gutterBottom>
-              Journey brings your emotions back to life by turning silent
-              day-to-day life into interactive experiences.
+              Let's Journey Together
             </Typography>
-          </RA.Bounce>
+          </RA.Zoom>
           <About ref={aboutRef} />
           <Container>
             <ExpandCircleDown />

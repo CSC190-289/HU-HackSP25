@@ -151,7 +151,7 @@ export default function RegisterJoin() {
         message: "Get Ready to Poll Up",
       })
 
-      void navigate("/dashboard")
+      void navigate("/")
     } catch (err: unknown) {
       //error handling method used from firebase authentication page
       if (err instanceof FirebaseError) {
