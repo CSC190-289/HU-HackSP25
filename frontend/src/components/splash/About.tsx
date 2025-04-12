@@ -14,7 +14,7 @@ function About(props: { ref?: React.Ref<unknown> }) {
         <CardContent>
           <RA.Bounce triggerOnce>
             <Typography fontWeight={700}>
-              Reinventing the Classroom Experience
+              About the Journey
             </Typography>
           </RA.Bounce>
           <RA.Bounce triggerOnce>
