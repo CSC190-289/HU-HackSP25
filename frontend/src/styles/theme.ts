@@ -1,14 +1,14 @@
 import { createTheme, PaletteMode, ThemeOptions } from "@mui/material"
-import { pink, teal } from "@mui/material/colors"
+import { pink } from "@mui/material/colors"
 
 const opts = (mode: PaletteMode): ThemeOptions => ({
   palette: {
     mode: mode,
     primary: {
-      main: teal[700],
+      main: "#7E4274",
     },
     secondary: {
-      main: pink[500],
+      main: "#f50057",
     },
   },
   typography: {
