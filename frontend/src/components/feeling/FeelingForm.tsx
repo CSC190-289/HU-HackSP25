@@ -122,7 +122,7 @@ export default function FeelingForm() {
           <Typography variant='h5'>How are we feeling today? {emo}</Typography>
           <UploadImage picture={picture} setPicture={setPicture} />
           <TextField
-            label={"Tell us how are you feeling"}
+            label={"Share about your day ❣️"}
             multiline
             rows={4}
             value={text}

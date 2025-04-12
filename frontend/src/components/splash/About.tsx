@@ -5,17 +5,17 @@ import React from "react"
 function About(props: { ref?: React.Ref<unknown> }) {
   return (
     <Box textAlign={"center"} ref={props.ref}>
-      <RA.Bounce triggerOnce>
+      <RA.Zoom triggerOnce>
         <Typography variant='h5' fontWeight={700} mb={2}>
           About
         </Typography>
-      </RA.Bounce>
+      </RA.Zoom>
       <Card>
         <CardContent>
-          <RA.Bounce triggerOnce>
+          <RA.Zoom triggerOnce>
             <Typography fontWeight={700}>About the Journey</Typography>
-          </RA.Bounce>
-          <RA.Bounce triggerOnce>
+          </RA.Zoom>
+          <RA.Zoom triggerOnce>
             <Typography variant='subtitle1' gutterBottom>
               Journey is a mobile application allowing users to write daily
               journal entries, serving as an emotional outlet to keep a daily
@@ -23,7 +23,7 @@ function About(props: { ref?: React.Ref<unknown> }) {
               their emotional fluctuations and share emotional states with
               trusted professionals or individuals.
             </Typography>
-          </RA.Bounce>
+          </RA.Zoom>
         </CardContent>
       </Card>
     </Box>
