@@ -13,6 +13,15 @@ const opts = (mode: PaletteMode): ThemeOptions => ({
   typography: {
     // fontFamily: "monospace",
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 20,
+        }
+      }
+    },
+  }
 })
 
 export function createCustomTheme(mode: PaletteMode) {

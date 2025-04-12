@@ -14,11 +14,10 @@ function Features(props: { ref?: React.Ref<unknown> }) {
         <Card>
           <CardContent>
             <RA.Bounce triggerOnce>
-              <Typography fontWeight={700}>Real-Time Questioning:</Typography>
+              <Typography fontWeight={700}>Logged Journal Entry:</Typography>
               <Typography>
-                Hosts are able to create and display multiple-choice <br></br>{" "}
-                question quizes and polls for participating users to respond to
-                simultaniously and in real-time.
+                Save all your logged entries, with easy access to previously
+                written works!
               </Typography>
             </RA.Bounce>
           </CardContent>
@@ -26,18 +25,15 @@ function Features(props: { ref?: React.Ref<unknown> }) {
         <Card>
           <CardContent>
             <RA.Bounce triggerOnce>
-              <Typography fontWeight={700}>Automatic Scoring:</Typography>
+              <Typography fontWeight={700}>AI Analysis:</Typography>
               <Typography>
-                PulseCheck automatically calculates a participant's quiz scores
-                in <br></br>
-                real-time giving them feedback on their performance following
-                each question with a complete overview on their preformance{" "}
-                <br></br>
-                after the session concludes.
+                Have your moods recorded through journal entires and analyzed
+                with a AI's Natural Process Language's model to easily get
+                insight with your emotions.
               </Typography>
             </RA.Bounce>
           </CardContent>
-        </Card>
+          {/* </Card>
         <Card>
           <CardContent>
             <RA.Bounce triggerOnce>
@@ -52,8 +48,8 @@ function Features(props: { ref?: React.Ref<unknown> }) {
             </RA.Bounce>
           </CardContent>
         </Card>
-        <Card>
-          <CardContent>
+        <Card> */}
+          {/* <CardContent>
             <RA.Bounce triggerOnce>
               <Typography fontWeight={700}>Web Access & UI:</Typography>
               <Typography>
@@ -91,7 +87,7 @@ function Features(props: { ref?: React.Ref<unknown> }) {
                 participants should the host choose.
               </Typography>
             </RA.Bounce>
-          </CardContent>
+          </CardContent> */}
         </Card>
       </Stack>
     </Box>
