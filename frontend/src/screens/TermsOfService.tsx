@@ -46,8 +46,7 @@ export default function TermsOfService(props: { ref?: React.Ref<unknown> }) {
                   User Responsibilities:{" "}
                 </Typography>
                 <Typography display={"inline"} mb={2}>
-                  You agree to use Journey for academic purposes only and
-                  refrain from cheating or disrupting the platform.
+                  You agree to use Journey for personal use and refrain from disrupting other users or disrupting the platform.
                 </Typography>
               </RA.Bounce>
             </CardContent>
@@ -103,7 +102,7 @@ export default function TermsOfService(props: { ref?: React.Ref<unknown> }) {
                   Liability:{" "}
                 </Typography>
                 <Typography display={"inline"} mb={2}>
-                  Journey is not responsible for any errors in quiz results or
+                  Journey is not responsible for any errors in data or
                   issues caused by third-party services. <br></br>
                 </Typography>
               </RA.Bounce>
