@@ -1,5 +1,5 @@
-import { Box, Button, Container, Stack, Typography } from "@mui/material"
-import { useNavigate, useLocation } from "react-router-dom"
+import { Box, Container, Stack, Typography } from "@mui/material"
+import { useLocation } from "react-router-dom"
 import Home from "../components/splash/Header"
 import About from "../components/splash/About"
 import FAQs from "../components/splash/FAQs"
@@ -14,11 +14,11 @@ interface LocationState {
 }
 
 export default function Splash() {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const handleClick = () => {
-    void navigate("/get-started")
-  }
+  // const handleClick = () => {
+  //   void navigate("/get-started")
+  // }
   const location = useLocation()
 
   const aboutRef = useRef<HTMLDivElement>(null) // Stores reference to "About" section

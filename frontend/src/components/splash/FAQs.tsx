@@ -9,7 +9,7 @@ function FAQs(props: { ref?: React.Ref<unknown> }) {
   const [open1, setOpen1] = useState(false)
   const [open2, setOpen2] = useState(false)
   const [open3, setOpen3] = useState(false)
-  const [open4, setOpen4] = useState(false)
+  // const [open4, setOpen4] = useState(false)
   return (
     <Box ref={props.ref}>
       <RA.Zoom triggerOnce>

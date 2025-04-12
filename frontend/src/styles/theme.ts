@@ -1,5 +1,5 @@
 import { createTheme, PaletteMode, ThemeOptions } from "@mui/material"
-import IndieFlower from "/fonts/IndieFlower-Regular.ttf"
+// import IndieFlower from "/fonts/IndieFlower-Regular.ttf"
 
 const opts = (mode: PaletteMode): ThemeOptions => ({
   palette: {
@@ -12,7 +12,7 @@ const opts = (mode: PaletteMode): ThemeOptions => ({
     },
   },
   typography: {
-    fontFamily: 'IndieFlower',
+    fontFamily: "IndieFlower",
     fontSize: 16,
   },
   components: {
@@ -20,10 +20,10 @@ const opts = (mode: PaletteMode): ThemeOptions => ({
       styleOverrides: {
         root: {
           borderRadius: 20,
-        }
-      }
+        },
+      },
     },
-  }
+  },
 })
 
 export function createCustomTheme(mode: PaletteMode) {
