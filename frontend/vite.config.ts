@@ -1,4 +1,4 @@
-/// <reference types="vitest"/>
+// / <reference types="vitest"/>
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import path from "path"
@@ -14,14 +14,14 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
-  test: {
-    globals: true,
-    environment: "jsdom",
-    setupFiles: "src/__tests__/setup.ts",
-    browser: {
-      enabled: true,
-      provider: "playwright",
-      instances: [{ browser: "chromium" }],
-    },
-  },
+  // test: {
+  //   globals: true,
+  //   environment: "jsdom",
+  //   setupFiles: "src/__tests__/setup.ts",
+  //   browser: {
+  //     enabled: true,
+  //     provider: "playwright",
+  //     instances: [{ browser: "chromium" }],
+  //   },
+  // },
 })
