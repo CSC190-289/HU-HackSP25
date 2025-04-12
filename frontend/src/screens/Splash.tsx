@@ -1,6 +1,6 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material"
 import { useNavigate, useLocation } from "react-router-dom"
-import Home from "../components/splash/Home"
+import Home from "../components/splash/Header"
 import About from "../components/splash/About"
 import FAQs from "../components/splash/FAQs"
 import Features from "../components/splash/Features"
