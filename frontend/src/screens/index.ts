@@ -1,6 +1,8 @@
+import Dashboard from "./Dashboard"
 import Debug from "./Debug"
 import GetStarted from "./GetStarted"
 import Login from "./Login"
+import Main from "./Main"
 import NotFound from "./NotFound"
 import PrivacyPolicy from "./PrivacyPolicy"
 import Profile from "./Profile"
@@ -10,6 +12,8 @@ import TermsOfService from "./TermsOfService"
 
 export const Screen = {
   Splash,
+  Dashboard,
+  Main,
   Debug,
   Login,
   Register,

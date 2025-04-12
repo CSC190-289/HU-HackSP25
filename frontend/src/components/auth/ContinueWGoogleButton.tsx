@@ -20,7 +20,7 @@ export default function ContinueWGoogleButton() {
         })
       })
       .then(() => {
-        void navigate("/dashboard")
+        void navigate("/")
       })
       .catch((error) => {
         console.debug(error)

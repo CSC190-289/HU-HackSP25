@@ -1,13 +1,10 @@
 import { Firestore } from "firebase/firestore"
-import PollStore from "./polls"
 import UserStore from "./users"
 import { initializeApp, FirebaseOptions } from "firebase/app"
 import { getAuth } from "firebase/auth"
 import { getFirestore } from "firebase/firestore"
 import { getStorage } from "firebase/storage"
 import AuthStore from "./auth"
-import SessionStore from "./sessions/sessions"
-import SubmissionStore from "./submissions"
 
 const firebaseConfig: FirebaseOptions = {
   apiKey: "AIzaSyCJgLPRoxFpZ9432kEawogv1oqaqhu735o",
@@ -57,16 +54,10 @@ export enum clx {
 class APIStore {
   private readonly _auth: AuthStore
   private readonly _users: UserStore
-  private readonly _polls: PollStore
-  private readonly _sessions: SessionStore
-  private readonly _submissions: SubmissionStore
 
   constructor(db: Firestore) {
     this._auth = new AuthStore()
     this._users = new UserStore(db)
-    this._polls = new PollStore(db)
-    this._sessions = new SessionStore(db)
-    this._submissions = new SubmissionStore(db)
   }
 
   public get auth(): AuthStore {

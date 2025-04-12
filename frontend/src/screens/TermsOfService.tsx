@@ -15,13 +15,13 @@ export default function TermsOfService(props: { ref?: React.Ref<unknown> }) {
       <Box textAlign={"center"} ref={props.ref}>
         <RA.Bounce triggerOnce>
           <Typography variant='h5' fontWeight={700} mt={2} mb={2}>
-            PulseCheck Terms of Service
+            Journey Terms of Service
           </Typography>
         </RA.Bounce>
 
         <RA.Bounce triggerOnce>
           <Typography fontWeight={700} mb={2}>
-            By using PulseCheck, you agree to the following terms:
+            By using Journey, you agree to the following terms:
           </Typography>
         </RA.Bounce>
 
@@ -33,7 +33,7 @@ export default function TermsOfService(props: { ref?: React.Ref<unknown> }) {
                   Eligibility:{" "}
                 </Typography>
                 <Typography display={"inline"} mb={2}>
-                  You must be at least 13 years old to use PulseCheck.
+                  You must be at least 13 years old to use Journey.
                 </Typography>
               </RA.Bounce>
             </CardContent>
@@ -46,7 +46,7 @@ export default function TermsOfService(props: { ref?: React.Ref<unknown> }) {
                   User Responsibilities:{" "}
                 </Typography>
                 <Typography display={"inline"} mb={2}>
-                  You agree to use PulseCheck for academic purposes only and
+                  You agree to use Journey for academic purposes only and
                   refrain from cheating or disrupting the platform.
                 </Typography>
               </RA.Bounce>
@@ -74,9 +74,9 @@ export default function TermsOfService(props: { ref?: React.Ref<unknown> }) {
                   Intellectual Property:{" "}
                 </Typography>
                 <Typography display={"inline"} mb={2}>
-                  All content within PulseCheck is owned by the company or
-                  licensed to us, and users may not reproduce or distribute it
-                  without permission. <br></br>
+                  All content within Journey is owned by the company or licensed
+                  to us, and users may not reproduce or distribute it without
+                  permission. <br></br>
                 </Typography>
               </RA.Bounce>
             </CardContent>
@@ -103,8 +103,8 @@ export default function TermsOfService(props: { ref?: React.Ref<unknown> }) {
                   Liability:{" "}
                 </Typography>
                 <Typography display={"inline"} mb={2}>
-                  PulseCheck is not responsible for any errors in quiz results
-                  or issues caused by third-party services. <br></br>
+                  Journey is not responsible for any errors in quiz results or
+                  issues caused by third-party services. <br></br>
                 </Typography>
               </RA.Bounce>
             </CardContent>

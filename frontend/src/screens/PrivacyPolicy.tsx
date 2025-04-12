@@ -15,15 +15,15 @@ export default function PrivacyPolicy(props: { ref?: React.Ref<unknown> }) {
       <Box textAlign={"center"} ref={props.ref}>
         <RA.Bounce triggerOnce>
           <Typography variant='h5' fontWeight={700} mt={2} mb={2}>
-            PulseCheck Privacy Policy
+            Journey Privacy Policy
           </Typography>
         </RA.Bounce>
 
         <RA.Bounce triggerOnce>
           <Typography fontWeight={700} mb={2}>
-            At PulseCheck, we respect your privacy and are committed to
-            protecting your personal information. This Privacy Policy explains
-            how we collect, use, and safeguard your data.
+            At Journey, we respect your privacy and are committed to protecting
+            your personal information. This Privacy Policy explains how we
+            collect, use, and safeguard your data.
           </Typography>
         </RA.Bounce>
 

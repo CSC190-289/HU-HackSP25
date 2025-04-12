@@ -24,8 +24,7 @@ export default function AuthMenuList(props: AuthMenuListProps) {
     api.auth
       .logout()
       .then(() => {
-        console.debug("logged out user!")
-        void navigate("/get-started")
+        void navigate("/")
         handleClose()
       })
       .catch((err) => console.debug(err))

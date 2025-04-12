@@ -9,7 +9,7 @@ export default function App() {
     <React.Fragment>
       <AppBar />
       <Routes>
-        <Route path='/' element={<Screen.Splash />} />
+        <Route path='/' element={<Screen.Main />} />
         <Route path='/debug' element={<Screen.Debug />} />
         <Route path='/login' element={<Screen.Login />} />
         <Route path='/register' element={<Screen.Register />} />

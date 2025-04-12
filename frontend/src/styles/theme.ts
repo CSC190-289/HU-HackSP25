@@ -1,5 +1,4 @@
 import { createTheme, PaletteMode, ThemeOptions } from "@mui/material"
-import { pink } from "@mui/material/colors"
 
 const opts = (mode: PaletteMode): ThemeOptions => ({
   palette: {
@@ -12,7 +11,7 @@ const opts = (mode: PaletteMode): ThemeOptions => ({
     },
   },
   typography: {
-    fontFamily: "monospace",
+    // fontFamily: "monospace",
   },
 })
 
