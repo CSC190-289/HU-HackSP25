@@ -1,55 +1,52 @@
 {
-  "name": "journey",
-  "private": true,
-  "workspaces": [
-    "./apps/*",
-    "./packages/*"
-  ],
-  "scripts": {
-    "native": "cd apps/expo && yarn start",
-    "native:prebuild": "cd apps/expo && yarn prebuild",
-    "ios": "cd apps/expo && yarn ios",
-    "android": "cd apps/expo && yarn android",
-    "watch": "ultra -r --no-pretty --concurrency 400 watch",
-    "vercel:install": "yarn set version 3.5 && yarn install",
-    "web": "yarn build && cd apps/next && yarn next",
-    "web:extract": "DISABLE_EXTRACTION=false yarn workspace next-app dev",
-    "web:prod": "yarn workspace next-app build",
-    "web:prod:serve": "yarn workspace next-app serve",
-    "postinstall": "yarn check-tamagui && yarn build",
-    "build": "yarn workspaces foreach --all --exclude next-app run build",
-    "upgrade:tamagui": "yarn up '*tamagui*'@latest '@tamagui/*'@latest react-native-web-lite@latest",
-    "upgrade:tamagui:canary": "yarn up '*tamagui*'@canary '@tamagui/*'@canary react-native-web-lite@canary",
-    "check-tamagui": "tamagui check",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "prepare": "husky"
-  },
-  "resolutions": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-refresh": "^0.14.0",
-    "react-native-svg": "15.11.2",
-    "react-native-web": "~0.19.12"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.24.6",
-    "@tamagui/cli": "^1.125.34",
-    "check-dependency-version-consistency": "^4.1.0",
-    "eslint": "^9.3.0",
-    "husky": "^9.1.6",
-    "prettier": "^3.3.3",
-    "turbo": "^1.13.4",
-    "typescript": "^5.6.2",
-    "ultra-runner": "^3.10.5",
-    "vitest": "^2.1.1"
-  },
-  "packageManager": "yarn@4.5.0",
-  "engines": {
-    "node": "22",
-    "npm": "10.8"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.3"
-  }
+	"name": "journey",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"lint": "eslint src",
+		"format": "prettier src --write",
+		"format:check": "prettier src --check",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.14.0",
+		"@emotion/styled": "^11.14.0",
+		"@mui/icons-material": "^6.4.4",
+		"@mui/material": "^6.4.4",
+		"firebase": "^11.3.1",
+		"mui-image": "^1.0.7",
+		"react": "^19.0.0",
+		"react-awesome-reveal": "^4.3.1",
+		"react-dom": "^19.0.0",
+		"react-firebase-hooks": "^5.1.1",
+		"react-router-dom": "^7.1.5"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.19.0",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.2.0",
+		"@testing-library/user-event": "^14.6.1",
+		"@types/mui-image": "^1",
+		"@types/react": "^19.0.8",
+		"@types/react-dom": "^19.0.3",
+		"@types/react-router-dom": "^5.3.3",
+		"@vitejs/plugin-react": "^4.3.4",
+		"@vitest/browser": "^3.0.6",
+		"eslint": "^9.19.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-prettier": "^5.2.3",
+		"eslint-plugin-react-hooks": "^5.0.0",
+		"eslint-plugin-react-refresh": "^0.4.18",
+		"globals": "^15.14.0",
+		"jsdom": "^26.0.0",
+		"prettier": "^3.5.1",
+		"typescript": "~5.7.2",
+		"typescript-eslint": "^8.22.0",
+		"vite": "^6.1.0",
+		"vitest-browser-react": "^0.1.1"
+	},
+	"packageManager": "yarn@4.6.0"
 }
