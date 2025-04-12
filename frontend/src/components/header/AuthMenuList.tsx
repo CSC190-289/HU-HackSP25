@@ -51,7 +51,7 @@ export default function AuthMenuList(props: AuthMenuListProps) {
       <MenuItem icon={Book} to='/' onClick={handleClose}>
         Journey Log
       </MenuItem>
-      <MenuItem icon={EditNote} to='/create/' onClick={handleClose}>
+      <MenuItem icon={EditNote} to='/entry/create/' onClick={handleClose}>
         Create Entry
       </MenuItem>
       {/* <MenuItem
