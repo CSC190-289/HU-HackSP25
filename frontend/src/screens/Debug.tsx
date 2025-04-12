@@ -1,4 +1,5 @@
 import FeelGrid from "@/components/FeelGrid"
+import Feeling from "@/components/feeling/FeelingForm"
 import { Feel } from "@/core/types"
 import { Container } from "@mui/material"
 
@@ -32,7 +33,8 @@ const arr: Feel[] = [
 export default function Debug() {
   return (
     <Container>
-      <FeelGrid feels={arr} />
+      {/* <FeelGrid feels={arr} /> */}
+      <Feeling/>
     </Container>
   )
 }

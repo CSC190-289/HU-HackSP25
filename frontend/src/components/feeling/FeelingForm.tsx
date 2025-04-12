@@ -83,13 +83,13 @@ export default function Feeling() {
       </AppBar>
       <Container sx={{ mt: 2 }}>
         <FeelCard feeling='Sad' amount={0.1} />
-        <Stack spacing={2}>
+        <Stack spacing={2} mt={5}>
           <Typography variant='h5'>
-            How are we feeling today? {getRandomFeelingEmoji()}
+            How are you feeling today? {getRandomFeelingEmoji()}
           </Typography>
           <UploadImage img={img} setImg={setImg} />
           <TextField
-            label={"Tell us how are you feeling"}
+            label={"Share about your day ❣️"}
             multiline
             rows={4}
             value={text}
