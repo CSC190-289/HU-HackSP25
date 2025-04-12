@@ -9,19 +9,19 @@ import AuthStore from "./auth"
 import SessionStore from "./sessions/sessions"
 import SubmissionStore from "./submissions"
 
-const config: FirebaseOptions = {
-  apiKey: "AIzaSyBAGd9DDTtn8aAeab4Ydq65yErWAzO7mPg",
-  appId: "1:262073852184:web:b7097acec54647a2f5fe6d",
-  authDomain: "pulsecheck-7cf2b.firebaseapp.com",
-  measurementId: "G-TZTCLTT9EK",
-  messagingSenderId: "262073852184",
-  projectId: "pulsecheck-7cf2b",
-  storageBucket: "pulsecheck-7cf2b.firebasestorage.app",
+const firebaseConfig: FirebaseOptions = {
+  apiKey: "AIzaSyCJgLPRoxFpZ9432kEawogv1oqaqhu735o",
+  authDomain: "gettingstated-ecede.firebaseapp.com",
+  projectId: "gettingstated-ecede",
+  storageBucket: "gettingstated-ecede.firebasestorage.app",
+  messagingSenderId: "802070077276",
+  appId: "1:802070077276:web:e0b6c48382b51bd5e9ab99",
+  measurementId: "G-3FJ63WSNVC",
 }
 
 const BUCKET_URL = "gs://pulsecheck-7cf2b.firebasestorage.app"
 
-const app = initializeApp(config)
+const app = initializeApp(firebaseConfig)
 
 export const auth = getAuth(app)
 export const firestore = getFirestore(app)
