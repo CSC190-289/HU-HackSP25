@@ -16,7 +16,13 @@ export interface User {
   created_at: Timestamp
 }
 
-export type FeelType = "Sadness" | "Joy" | "Love" | "Anger" | "Fear" | "Freaky"
+export type FeelType =
+  | "Sadness"
+  | "Joy"
+  | "Love"
+  | "Anger"
+  | "Fear"
+  | "Surprise"
 
 export interface Feel {
   name: FeelType

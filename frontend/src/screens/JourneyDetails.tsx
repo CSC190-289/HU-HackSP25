@@ -7,6 +7,7 @@ import {
   Box,
   Container,
   LinearProgress,
+  Stack,
   Toolbar,
   Typography,
 } from "@mui/material"
@@ -81,11 +82,13 @@ export default function JourneyDetails() {
       </AppBar>
       {entry?.exists() ? (
         <Container sx={{ mt: 2 }}>
-          {entry.data().picture && (
-            <Image src={entry.data().picture} height={256} fit='contain' />
-          )}
-          <Typography textAlign={"initial"}>{entry.data().text}</Typography>
-          <FeelGrid feels={entry.data().feelings} />
+          <Stack spacing={2}>
+            {entry.data().picture && (
+              <Image src={entry.data().picture} height={256} fit='contain' />
+            )}
+            <Typography textAlign={"initial"}>{entry.data().text}</Typography>
+            <FeelGrid feels={entry.data().feelings} />
+          </Stack>
         </Container>
       ) : (
         <LinearProgress />
