@@ -8,6 +8,7 @@ import { useRef, useEffect } from "react"
 import { RA } from "@/styles"
 import { ExpandCircleDown } from "@mui/icons-material"
 
+
 interface LocationState {
   scrollTo?: string
 }
@@ -48,6 +49,7 @@ export default function Splash() {
 
   return (
     <Container maxWidth='sm'>
+      
       <Box mb={16}>
         <RA.Bounce triggerOnce>
           <Typography variant='h4' fontWeight={700} margin={4} gutterBottom>
