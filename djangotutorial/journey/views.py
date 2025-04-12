@@ -32,6 +32,9 @@ def get_percentages(text):
 #######
 from django.http import JsonResponse
 
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
 def index(request):
     if request.method == "POST":
         raw_string = request.body.decode('utf-8')
