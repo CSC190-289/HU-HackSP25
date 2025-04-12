@@ -12,13 +12,13 @@ function FAQs(props: { ref?: React.Ref<unknown> }) {
   const [open4, setOpen4] = useState(false)
   return (
     <Box ref={props.ref}>
-      <RA.Bounce triggerOnce>
+      <RA.Zoom triggerOnce>
         <Typography variant='h5' textAlign={"center"} fontWeight={700} mb={2}>
           FAQs
         </Typography>
-      </RA.Bounce>
+      </RA.Zoom>
       <Stack spacing={4}>
-        <RA.Bounce triggerOnce>
+        <RA.Zoom triggerOnce>
           <Accordion
             expanded={open1}
             onMouseEnter={() => setOpen1(true)}
@@ -34,8 +34,8 @@ function FAQs(props: { ref?: React.Ref<unknown> }) {
               up.
             </AccordionDetails>
           </Accordion>
-        </RA.Bounce>
-        <RA.Bounce triggerOnce>
+        </RA.Zoom>
+        <RA.Zoom triggerOnce>
           <Accordion
             expanded={open2}
             onMouseEnter={() => setOpen2(true)}
@@ -49,8 +49,8 @@ function FAQs(props: { ref?: React.Ref<unknown> }) {
               patterns that the user records in their journal entries.
             </AccordionDetails>
           </Accordion>
-        </RA.Bounce>
-        <RA.Bounce triggerOnce>
+        </RA.Zoom>
+        <RA.Zoom triggerOnce>
           <Accordion
             expanded={open3}
             onMouseEnter={() => setOpen3(true)}
@@ -65,8 +65,8 @@ function FAQs(props: { ref?: React.Ref<unknown> }) {
               may apply for less limitations on certain features.
             </AccordionDetails>
           </Accordion>
-        </RA.Bounce>
-        {/* <RA.Bounce triggerOnce>
+        </RA.Zoom>
+        {/* <RA.Zoom triggerOnce>
           <Accordion
             expanded={open4}
             onMouseEnter={() => setOpen4(true)}
@@ -79,7 +79,7 @@ function FAQs(props: { ref?: React.Ref<unknown> }) {
               seamlessly mobile devices. 
             </AccordionDetails> 
           </Accordion>
-        </RA.Bounce> */}
+        </RA.Zoom> */}
       </Stack>
     </Box>
   )

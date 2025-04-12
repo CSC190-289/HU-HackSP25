@@ -50,16 +50,15 @@ export default function Splash() {
   return (
     <Container maxWidth='sm'>
       <Box mb={16}>
-        <RA.Bounce triggerOnce>
+        <RA.Zoom triggerOnce>
           <Home></Home>
-        </RA.Bounce>
+        </RA.Zoom>
         <Stack spacing={4} mb={32}>
-          <RA.Bounce triggerOnce>
+          <RA.Zoom triggerOnce>
             <Typography variant='body1' marginInline={4} gutterBottom>
-              Journey brings your emotions back to life by turning silent
-              day-to-day life into interactive experiences.
+              Let's Journey Together
             </Typography>
-          </RA.Bounce>
+          </RA.Zoom>
           <About ref={aboutRef} />
           <Container>
             <ExpandCircleDown />

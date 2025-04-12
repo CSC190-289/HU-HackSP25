@@ -84,7 +84,7 @@ export default function Feeling() {
       <Container sx={{ mt: 2 }}>
         <FeelCard feeling='Sad' amount={0.1} />
         <Stack spacing={2} mt={5}>
-          <Typography variant='h5'>
+          <Typography variant='h5' fontWeight="medium">
             How are you feeling today? {getRandomFeelingEmoji()}
           </Typography>
           <UploadImage img={img} setImg={setImg} />
